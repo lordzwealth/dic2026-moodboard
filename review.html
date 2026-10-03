@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Moodboard review | DIC 2026 media team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #160304;
+    --wine: #2b0709;
+    --panel: #220506;
+    --red: #b3141c;
+    --gold: #f4b52b;
+    --gold-hi: #ffe48a;
+    --cream: #fff5e8;
+    --muted: rgba(255, 245, 232, .66);
+    --line: rgba(255, 245, 232, .16);
+    --ok: #7fdca0;
+    --warn: #ffd166;
+    --bad: #ff8a7a;
+    --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font); color: var(--cream); background: var(--ink); line-height: 1.45; }
+  a { color: var(--gold-hi); }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  [hidden] { display: none !important; }
+
+  input, select, textarea, button { font: inherit; font-size: 15px; }
+  input[type="text"], input[type="password"], input[type="search"], select, textarea {
+    color: var(--cream); background: rgba(0, 0, 0, .35);
+    border: 1.5px solid var(--line); border-radius: 10px; padding: 9px 12px;
+  }
+  select option { background: var(--wine); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); }
+  .btn { cursor: pointer; border: 0; border-radius: 10px; padding: 10px 16px; font-weight: 800; color: var(--ink); background: var(--gold); }
+  .btn.ghost { color: var(--cream); background: none; border: 1.5px solid var(--line); font-weight: 600; }
+
+  /* Login */
+  .login { min-height: 100vh; display: grid; place-items: center; padding: 24px;
+    background: radial-gradient(60% 50% at 20% 10%, rgba(179, 20, 28, .55), transparent 70%), var(--ink); }
+  .login form { width: min(380px, 100%); background: var(--panel); border: 3px solid var(--cream); border-radius: 20px; padding: 28px; }
+  .login h1 { margin: 0 0 6px; font-weight: 900; font-stretch: 108%; font-size: 28px; line-height: 1; color: var(--gold-hi); }
+  .login p { margin: 0 0 20px; color: var(--muted); font-size: 15px; }
+  .login input { width: 100%; margin-bottom: 12px; }
+  .login .btn { width: 100%; }
+  .login .err { color: var(--bad); font-size: 14px; margin: 10px 0 0; min-height: 1em; }
+
+  /* Top bar */
+  .top { position: sticky; top: 0; z-index: 5; background: rgba(22, 3, 4, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .top-inner { max-width: 1280px; margin: 0 auto; padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+  .top h1 { margin: 0; font-weight: 900; font-stretch: 105%; font-size: 22px; color: var(--gold-hi); margin-right: auto; }
+  .counts { display: flex; gap: 8px; flex-wrap: wrap; }
+  .count { font-size: 13px; padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+  .count b { color: var(--cream); }
+  .filters { max-width: 1280px; margin: 0 auto; padding: 0 20px 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .filters input[type="search"] { flex: 1 1 220px; }
+  .toggle { display: flex; gap: 6px; align-items: center; font-size: 14px; color: var(--muted); }
+
+  main { max-width: 1280px; margin: 0 auto; padding: 20px; }
+  .empty { text-align: center; color: var(--muted); padding: 80px 20px; }
+
+  /* Submission card */
+  .card { display: grid; gap: 20px; padding: 20px; margin-bottom: 18px; border-radius: 18px; background: var(--panel); border: 1.5px solid var(--line); }
+  .card.s-approved { border-color: rgba(127, 220, 160, .5); }
+  .card.s-needs_fix { border-color: rgba(255, 209, 102, .55); }
+  .card.s-rejected { opacity: .6; }
+  @media (min-width: 980px) { .card { grid-template-columns: 340px 1fr; } }
+
+  .biz-name { margin: 0; font-weight: 900; font-stretch: 105%; font-size: 24px; line-height: 1.1; }
+  .tagline { margin: 4px 0 0; color: var(--muted); font-style: italic; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .chip { font-size: 12.5px; font-weight: 700; padding: 3px 10px; border-radius: 99px; background: rgba(255, 245, 232, .1); }
+  .chip.pkg { background: var(--red); border: 1.5px solid var(--cream); }
+  .chip.flag { background: rgba(255, 209, 102, .18); color: var(--warn); }
+  .chip.st-pending { color: var(--cream); }
+  .chip.st-approved { background: rgba(127, 220, 160, .18); color: var(--ok); }
+  .chip.st-needs_fix { background: rgba(255, 209, 102, .18); color: var(--warn); }
+  .chip.st-rejected { background: rgba(255, 138, 122, .18); color: var(--bad); }
+
+  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; }
+  dt { color: var(--muted); }
+  dd { margin: 0; overflow-wrap: anywhere; }
+  .desc { font-size: 14px; color: var(--muted); margin: 10px 0 0; }
+
+  .review-box { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+  .review-box textarea { min-height: 64px; resize: vertical; width: 100%; }
+  .review-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .review-row select { flex: 1; }
+  .saved { font-size: 13px; color: var(--ok); }
+
+  /* Logos side by side */
+  .logos { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); align-content: start; }
+  .logo { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: rgba(0, 0, 0, .25); display: flex; flex-direction: column; }
+  .logo.missing { opacity: .45; }
+  .logo-img {
+    aspect-ratio: 4 / 3; display: grid; place-items: center; padding: 12px;
+    background-color: #f7f1ea;
+    background-image: linear-gradient(45deg, #ebe3da 25%, transparent 25%), linear-gradient(-45deg, #ebe3da 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ebe3da 75%), linear-gradient(-45deg, transparent 75%, #ebe3da 75%);
+    background-size: 14px 14px; background-position: 0 0, 0 7px, 7px -7px, -7px 0;
+  }
+  .logo-img.dark, body.all-dark .logo-img { background: radial-gradient(circle at 30% 20%, #8e1017, #2b0709 75%); }
+  .logo-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .logo-img .none { font-size: 13px; color: #8a7a72; }
+  .logo-img.dark .none, body.all-dark .logo-img .none { color: rgba(255, 245, 232, .5); }
+  .logo-meta { padding: 8px 10px 10px; font-size: 13px; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .logo-meta span { font-weight: 700; }
+  .logo-meta a { font-size: 12.5px; white-space: nowrap; }
+  .ext { font-size: 11px; color: var(--muted); font-weight: 400; margin-left: 4px; }
+</style>
+</head>
+<body>
+
+<section class="login" id="login">
+  <form id="login-form">
+    <h1>Moodboard review</h1>
+    <p>Media team only. Enter the review password.</p>
+    <label for="pw" style="position:absolute;left:-9999px">Password</label>
+    <input type="password" id="pw" autocomplete="current-password" placeholder="Password" required>
+    <button class="btn" type="submit">Open review</button>
+    <p class="err" id="login-err" role="alert"></p>
+  </form>
+</section>
+
+<div id="app" hidden>
+  <header class="top">
+    <div class="top-inner">
+      <h1>Moodboard submissions</h1>
+      <div class="counts" id="counts"></div>
+      <button class="btn ghost" id="refresh" type="button">Refresh</button>
+      <button class="btn ghost" id="logout" type="button">Lock</button>
+    </div>
+    <div class="filters">
+      <input type="search" id="search" placeholder="Search business, name or phone" aria-label="Search">
+      <select id="f-status" aria-label="Filter by status">
+        <option value="">All statuses</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="needs_fix">Needs fix</option>
+        <option value="rejected">Rejected</option>
+      </select>
+      <select id="f-package" aria-label="Filter by package"><option value="">All packages</option></select>
+      <label class="toggle"><input type="checkbox" id="all-dark"> Preview every logo on the board's dark red</label>
+    </div>
+  </header>
+  <main id="list"></main>
+</div>
+
+<script>
+  const LOGO_SLOTS = [
+    ['logo_primary_url', 'Main'],
+    ['logo_reversed_url', 'White', true],
+    ['logo_mono_url', 'One colour'],
+    ['logo_icon_url', 'Icon'],
+    ['logo_horizontal_url', 'Wide'],
+    ['logo_stacked_url', 'Stacked'],
+  ];
+  const STATUS_LABEL = { pending: 'Pending', approved: 'Approved', needs_fix: 'Needs fix', rejected: 'Rejected' };
+
+  let rows = [];
+  const $ = (id) => document.getElementById(id);
+  const pw = () => sessionStorage.getItem('reviewPw') || '';
+
+  // Cloudinary: preview as PNG (works for SVG, PDF, AI, EPS), or download the original
+  const ext = (url) => (url.split('?')[0].split('.').pop() || '').toLowerCase();
+  const preview = (url) => {
+    const multi = ['pdf', 'ai', 'eps'].includes(ext(url)) ? 'pg_1,' : '';
+    return url.replace('/upload/', `/upload/${multi}f_png,w_480,h_360,c_fit/`).replace(/\.(pdf|ai|eps|svg)$/i, '.png');
+  };
+  const original = (url) => url.replace('/upload/', '/upload/fl_attachment/');
+
+  async function api(method, body) {
+    const res = await fetch('/api/review', {
+      method,
+      headers: { 'x-review-password': pw(), ...(body ? { 'Content-Type': 'application/json' } : {}) },
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) { const e = new Error(data.error || 'Request failed'); e.status = res.status; throw e; }
+    return data;
+  }
+
+  async function load() {
+    try {
+      const data = await api('GET');
+      rows = data.rows || [];
+      $('login').hidden = true;
+      $('app').hidden = false;
+      fillPackageFilter();
+      render();
+    } catch (err) {
+      if (err.status === 401) sessionStorage.removeItem('reviewPw');
+      $('app').hidden = true;
+      $('login').hidden = false;
+      $('login-err').textContent = err.message;
+    }
+  }
+
+  function fillPackageFilter() {
+    const sel = $('f-package');
+    const current = sel.value;
+    const pkgs = [...new Set(rows.map((r) => r.package))].sort();
+    sel.innerHTML = '<option value="">All packages</option>';
+    pkgs.forEach((p) => { const o = document.createElement('option'); o.value = p; o.textContent = cap(p); sel.appendChild(o); });
+    sel.value = current;
+  }
+
+  const cap = (s) => (s || '').charAt(0).toUpperCase() + (s || '').slice(1);
+  const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+
+  function render() {
+    // Counts
+    const counts = { pending: 0, approved: 0, needs_fix: 0, rejected: 0 };
+    rows.forEach((r) => (counts[r.status] = (counts[r.status] || 0) + 1));
+    const c = $('counts');
+    c.innerHTML = '';
+    const total = el('span', 'count'); total.append(el('b', '', rows.length), ' total'); c.append(total);
+    Object.entries(counts).forEach(([k, v]) => { const s = el('span', 'count'); s.append(el('b', '', v), ' ' + STATUS_LABEL[k].toLowerCase()); c.append(s); });
+
+    // Filters
+    const q = $('search').value.trim().toLowerCase();
+    const fs = $('f-status').value;
+    const fp = $('f-package').value;
+    const shown = rows.filter((r) =>
+      (!fs || r.status === fs) && (!fp || r.package === fp) &&
+      (!q || [r.business_name, r.full_name, r.phone, r.email].join(' ').toLowerCase().includes(q)));
+
+    const list = $('list');
+    list.innerHTML = '';
+    if (!shown.length) {
+      list.append(el('p', 'empty', rows.length ? 'No submissions match these filters.' : 'No submissions yet. Share the form link and they will appear here.'));
+      return;
+    }
+    shown.forEach((r) => list.append(card(r)));
+  }
+
+  function card(r) {
+    const art = el('article', 'card s-' + r.status);
+
+    // Left: details
+    const info = el('div');
+    info.append(el('h2', 'biz-name', r.business_name));
+    if (r.tagline) info.append(el('p', 'tagline', r.tagline));
+
+    const chips = el('div', 'chips');
+    chips.append(el('span', 'chip pkg', cap(r.package)));
+    chips.append(el('span', 'chip st-' + r.status, STATUS_LABEL[r.status] || r.status));
+    if (r.category) chips.append(el('span', 'chip', r.category));
+    if (r.low_quality_logo) chips.append(el('span', 'chip flag', 'Says logo is low quality'));
+    if (!r.payment_proof_url) chips.append(el('span', 'chip flag', 'No payment proof'));
+    info.append(chips);
+
+    const dl = el('dl');
+    const add = (label, value, href) => {
+      if (!value) return;
+      dl.append(el('dt', '', label));
+      const dd = el('dd');
+      if (href) { const a = el('a', '', value); a.href = href; a.target = '_blank'; a.rel = 'noopener'; dd.append(a); } else dd.textContent = value;
+      dl.append(dd);
+    };
+    const wa = (n) => 'https://wa.me/' + String(n).replace(/\D/g, '').replace(/^0/, '234');
+    add('Contact', r.full_name + (r.department ? ` (${r.department})` : ''));
+    add('Phone', r.phone, wa(r.phone));
+    add('Email', r.email, 'mailto:' + r.email);
+    add('Placement', r.placement_pref);
+    add('Colours', r.brand_colors);
+    add('Instagram', r.instagram);
+    add('TikTok', r.tiktok);
+    add('X', r.x_handle);
+    add('Facebook', r.facebook);
+    add('Website', r.website, r.website);
+    add('Biz WhatsApp', r.whatsapp_business);
+    add('Location', r.location);
+    add('Payment ref', r.payment_ref);
+    if (r.payment_proof_url) add('Proof', 'View receipt', preview(r.payment_proof_url).replace('w_480,h_360', 'w_1200,h_1600'));
+    add('Submitted', new Date(r.created_at).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' }));
+    add('Reference', 'DIC-' + r.id.slice(0, 6).toUpperCase());
+    info.append(dl);
+    if (r.description) info.append(el('p', 'desc', r.description));
+
+    // Review controls
+    const box = el('div', 'review-box');
+    const row = el('div', 'review-row');
+    const sel = el('select');
+    sel.setAttribute('aria-label', 'Status for ' + r.business_name);
+    Object.entries(STATUS_LABEL).forEach(([k, v]) => { const o = el('option', '', v); o.value = k; sel.append(o); });
+    sel.value = r.status;
+    const save = el('button', 'btn', 'Save');
+    save.type = 'button';
+    const saved = el('span', 'saved');
+    row.append(sel, save, saved);
+    const notes = el('textarea');
+    notes.placeholder = 'Notes for the team, e.g. asked for a white version on WhatsApp';
+    notes.setAttribute('aria-label', 'Notes for ' + r.business_name);
+    notes.value = r.internal_notes || '';
+    box.append(row, notes);
+    info.append(box);
+
+    save.addEventListener('click', async () => {
+      save.disabled = true; saved.textContent = 'Saving...'; saved.style.color = '';
+      try {
+        const { row: u } = await api('POST', { id: r.id, status: sel.value, internal_notes: notes.value });
+        Object.assign(r, u);
+        saved.textContent = 'Saved';
+        setTimeout(render, 700);
+      } catch (err) {
+        saved.textContent = err.message; saved.style.color = 'var(--bad)';
+      } finally { save.disabled = false; }
+    });
+
+    // Right: logos side by side
+    const logos = el('div', 'logos');
+    LOGO_SLOTS.forEach(([key, label, dark]) => {
+      const url = r[key];
+      const tile = el('div', 'logo' + (url ? '' : ' missing'));
+      const box = el('div', 'logo-img' + (dark ? ' dark' : ''));
+      if (url) {
+        const img = el('img');
+        img.loading = 'lazy';
+        img.alt = `${r.business_name} ${label} logo`;
+        img.src = preview(url);
+        img.onerror = () => { img.replaceWith(el('span', 'none', 'Preview unavailable. Download to view.')); };
+        box.append(img);
+      } else {
+        box.append(el('span', 'none', 'Not sent'));
+      }
+      const meta = el('div', 'logo-meta');
+      const name = el('span', '', label);
+      if (url) name.append(el('span', 'ext', ext(url).toUpperCase()));
+      meta.append(name);
+      if (url) { const a = el('a', '', 'Download'); a.href = original(url); meta.append(a); }
+      tile.append(box, meta);
+      logos.append(tile);
+    });
+
+    art.append(info, logos);
+    return art;
+  }
+
+  // Events
+  $('login-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    $('login-err').textContent = '';
+    sessionStorage.setItem('reviewPw', $('pw').value);
+    load();
+  });
+  $('logout').addEventListener('click', () => { sessionStorage.removeItem('reviewPw'); location.reload(); });
+  $('refresh').addEventListener('click', load);
+  ['search', 'f-status', 'f-package'].forEach((id) => $(id).addEventListener('input', render));
+  $('all-dark').addEventListener('change', (e) => document.body.classList.toggle('all-dark', e.target.checked));
+
+  if (pw()) load();
+</script>
+</body>
+</html>
