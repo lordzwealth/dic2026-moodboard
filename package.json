@@ -1,0 +1,9 @@
+{
+  "name": "dic2026-moodboard-form",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0",
+    "@vercel/blob": "^1.0.0"
+  }
+}
