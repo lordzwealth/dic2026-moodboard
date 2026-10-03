@@ -1,7 +1,6 @@
 // Saves one form submission into Neon.
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(process.env.DATABASE_URL);
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -12,12 +11,12 @@ const text = (v, max = 300) => {
   return t.length ? t : null;
 };
 
-// Only accept file links that point to our own Vercel Blob store
-const blobUrl = (v) => {
+// Only accept file links that point to Cloudinary
+const fileUrl = (v) => {
   if (typeof v !== 'string' || !v) return null;
   try {
     const u = new URL(v);
-    return u.protocol === 'https:' && u.hostname.endsWith('.blob.vercel-storage.com') ? u.toString() : null;
+    return u.protocol === 'https:' && u.hostname === 'res.cloudinary.com' ? u.toString() : null;
   } catch {
     return null;
   }
@@ -27,6 +26,11 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Use POST' });
   }
+
+  if (!process.env.DATABASE_URL) {
+    return res.status(500).json({ error: 'The form is not connected to the database yet (DATABASE_URL is missing in Vercel).' });
+  }
+  const sql = neon(process.env.DATABASE_URL);
 
   const b = req.body || {};
 
@@ -51,13 +55,13 @@ export default async function handler(req, res) {
     package: text(b.package, 40),
     placement_pref: text(b.placement_pref, 80),
     payment_ref: text(b.payment_ref, 80),
-    payment_proof_url: blobUrl(b.payment_proof_url),
-    logo_primary_url: blobUrl(b.logo_primary_url),
-    logo_reversed_url: blobUrl(b.logo_reversed_url),
-    logo_mono_url: blobUrl(b.logo_mono_url),
-    logo_icon_url: blobUrl(b.logo_icon_url),
-    logo_horizontal_url: blobUrl(b.logo_horizontal_url),
-    logo_stacked_url: blobUrl(b.logo_stacked_url),
+    payment_proof_url: fileUrl(b.payment_proof_url),
+    logo_primary_url: fileUrl(b.logo_primary_url),
+    logo_reversed_url: fileUrl(b.logo_reversed_url),
+    logo_mono_url: fileUrl(b.logo_mono_url),
+    logo_icon_url: fileUrl(b.logo_icon_url),
+    logo_horizontal_url: fileUrl(b.logo_horizontal_url),
+    logo_stacked_url: fileUrl(b.logo_stacked_url),
     low_quality_logo: b.low_quality_logo === true,
     agreed_terms: b.agreed_terms === true,
   };
