@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get your business on the board | Destiny International Conference 2026</title>
+<meta name="description" content="Book a space for your business on the Destiny International Conference 2026 moodboard.">
+<meta name="theme-color" content="#160304">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #160304;
+    --wine: #2b0709;
+    --red: #b3141c;
+    --red-hi: #d4222a;
+    --gold: #f4b52b;
+    --gold-hi: #ffe48a;
+    --gold-deep: #8a4b06;
+    --cream: #fff5e8;
+    --muted: rgba(255, 245, 232, .7);
+    --line: rgba(255, 245, 232, .22);
+    --field: rgba(22, 3, 4, .55);
+    --danger: #ff8a7a;
+    --font: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--cream);
+    background: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  /* Flyer-style glow + rainbow light leak */
+  body::before {
+    content: "";
+    position: fixed; inset: 0; z-index: -2;
+    background:
+      radial-gradient(55% 45% at 12% 8%, rgba(212, 34, 42, .6), transparent 70%),
+      radial-gradient(45% 55% at 95% 85%, rgba(179, 20, 28, .55), transparent 70%),
+      linear-gradient(118deg, transparent 52%, rgba(255, 90, 40, .16) 58%, rgba(255, 214, 70, .13) 61%,
+        rgba(70, 205, 140, .09) 64%, rgba(80, 130, 255, .12) 67%, rgba(170, 80, 255, .08) 70%, transparent 76%),
+      var(--ink);
+  }
+  /* Film grain */
+  body::after {
+    content: "";
+    position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    opacity: .16; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  a { color: var(--gold-hi); }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 22px 24px;
+    display: grid;
+    gap: 32px;
+    align-items: end;
+  }
+  @media (min-width: 860px) {
+    .hero { grid-template-columns: 1fr 300px; padding-top: 64px; }
+  }
+  .church {
+    font-weight: 800;
+    font-stretch: 90%;
+    font-size: 15px;
+    letter-spacing: .02em;
+    margin: 0 0 28px;
+  }
+  .church span { display: block; font-weight: 400; font-style: italic; font-size: 13px; color: var(--muted); letter-spacing: 0; }
+  .conf-name {
+    font-weight: 900;
+    font-stretch: 100%;
+    font-size: clamp(15px, 2vw, 18px);
+    line-height: 1.15;
+    margin: 0 0 10px;
+    color: var(--cream);
+  }
+  h1 {
+    margin: 0;
+    font-weight: 900;
+    font-stretch: 112%;
+    font-size: clamp(42px, 8.4vw, 92px);
+    line-height: .9;
+    letter-spacing: -.01em;
+    background: linear-gradient(180deg, var(--gold-hi) 0%, var(--gold) 55%, #e08d12 100%);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 0 var(--gold-deep)) drop-shadow(0 4px 0 #5a2a03) drop-shadow(0 18px 22px rgba(0, 0, 0, .55));
+    animation: rise .9s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: none; } }
+  .lede {
+    max-width: 56ch;
+    margin: 24px 0 0;
+    font-size: 17px;
+    color: var(--muted);
+  }
+
+  .date-card {
+    background: linear-gradient(160deg, var(--red-hi), var(--red) 55%, #7d0b12);
+    border: 4px solid var(--cream);
+    border-radius: 22px;
+    padding: 20px 22px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .45);
+  }
+  .date-card .dates { font-weight: 900; font-stretch: 95%; font-size: 26px; line-height: 1.05; margin: 0 0 14px; }
+  .date-card p { margin: 0; font-size: 14px; color: rgba(255, 245, 232, .85); }
+  .date-card .deadline { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255, 245, 232, .35); }
+  .date-card strong { display: block; color: var(--gold-hi); font-size: 18px; font-weight: 800; }
+
+  /* ---------- Form ---------- */
+  main { max-width: 760px; margin: 0 auto; padding: 8px 22px 80px; }
+
+  .step {
+    margin-top: 44px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+  }
+  .step-head { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; margin-bottom: 22px; }
+  .step-n {
+    width: 46px; height: 46px;
+    display: grid; place-items: center;
+    background: var(--red);
+    border: 3px solid var(--cream);
+    border-radius: 12px;
+    font-weight: 900; font-size: 20px;
+  }
+  h2 { margin: 2px 0 4px; font-weight: 900; font-stretch: 105%; font-size: 26px; line-height: 1.1; }
+  .step-head p { margin: 0; color: var(--muted); font-size: 15px; max-width: 58ch; }
+
+  .grid { display: grid; gap: 18px; }
+  @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } .full { grid-column: 1 / -1; } }
+
+  .field label, .field .label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .opt { font-weight: 400; color: var(--muted); font-size: 13px; }
+  .help { display: block; font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  input[type="text"], input[type="email"], input[type="tel"], input[type="url"], select, textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 16px; /* stops iOS zoom */
+    color: var(--cream);
+    background: var(--field);
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: border-color .15s;
+  }
+  input::placeholder, textarea::placeholder { color: rgba(255, 245, 232, .38); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(244, 181, 43, .25); }
+  select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23fff5e8' stroke-width='2' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+  select option { background: var(--wine); color: var(--cream); }
+  textarea { min-height: 96px; resize: vertical; }
+  .counter { float: right; font-size: 12px; color: var(--muted); font-weight: 400; }
+  .field.invalid input, .field.invalid select, .field.invalid textarea { border-color: var(--danger); }
+
+  /* Packages: the flyer's white-bordered red panels */
+  .packages { display: grid; gap: 14px; }
+  @media (min-width: 640px) { .packages { grid-template-columns: repeat(3, 1fr); } }
+  .pkg { position: relative; cursor: pointer; display: block; }
+  .pkg input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .pkg-card {
+    height: 100%;
+    padding: 18px 16px 20px;
+    border-radius: 18px;
+    border: 3px solid rgba(255, 245, 232, .55);
+    background: linear-gradient(165deg, rgba(212, 34, 42, .85), rgba(125, 11, 18, .9));
+    transition: transform .18s, border-color .18s, box-shadow .18s;
+  }
+  .pkg-name { font-weight: 900; font-stretch: 105%; font-size: 20px; }
+  .pkg-price { font-weight: 800; font-size: 22px; color: var(--gold-hi); margin: 4px 0 10px; }
+  .pkg-detail { font-size: 14px; color: rgba(255, 245, 232, .85); }
+  .pkg input:checked + .pkg-card { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0, 0, 0, .4), 0 0 0 3px rgba(244, 181, 43, .3); }
+  .pkg input:focus-visible + .pkg-card { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  .pay-box {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1.5px dashed rgba(244, 181, 43, .55);
+    background: rgba(244, 181, 43, .06);
+  }
+  .pay-box p { margin: 0 0 6px; font-size: 15px; }
+  .acct { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; letter-spacing: .04em; }
+  .btn-small {
+    font: inherit; font-size: 13px; font-weight: 700;
+    color: var(--ink); background: var(--gold);
+    border: 0; border-radius: 999px; padding: 6px 14px; cursor: pointer;
+  }
+
+  /* Upload tiles */
+  .file-tips {
+    margin: 0 0 20px; padding: 16px 18px; border-radius: 14px;
+    background: rgba(255, 245, 232, .06); border: 1px solid var(--line);
+    font-size: 14px; color: var(--muted);
+  }
+  .file-tips strong { color: var(--cream); }
+  .file-tips ul { margin: 8px 0 0; padding-left: 18px; }
+  .file-tips li + li { margin-top: 4px; }
+
+  .tiles { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .tile { display: flex; flex-direction: column; border-radius: 16px; border: 1.5px solid var(--line); background: var(--field); overflow: hidden; }
+  .tile.required-tile { border-color: rgba(244, 181, 43, .55); }
+  .drop {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    display: grid; place-items: center;
+    padding: 14px;
+    text-align: center;
+    font-size: 13px; color: #6b5a52;
+    background-color: #f7f1ea;
+    background-image: linear-gradient(45deg, #ebe3da 25%, transparent 25%), linear-gradient(-45deg, #ebe3da 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ebe3da 75%), linear-gradient(-45deg, transparent 75%, #ebe3da 75%);
+    background-size: 16px 16px; background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  }
+  .drop.dark { background: radial-gradient(circle at 30% 20%, #8e1017, #2b0709 75%); color: rgba(255, 245, 232, .7); }
+  .drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+  .drop.dragging { outline: 3px dashed var(--gold); outline-offset: -8px; }
+  .drop img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }
+  .drop .plus { display: block; font-size: 30px; line-height: 1; margin-bottom: 6px; font-weight: 300; }
+  .file-badge { font-weight: 900; font-size: 22px; color: var(--red); pointer-events: none; }
+  .drop.dark .file-badge { color: var(--gold-hi); }
+  .tile-body { padding: 12px 14px 14px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .tile-title { font-weight: 800; font-size: 15px; }
+  .tile-hint { font-size: 13px; color: var(--muted); }
+  .tile-status { font-size: 12.5px; margin-top: 4px; }
+  .tile-status.ok { color: #9fe6b8; }
+  .tile-status.warn { color: var(--gold-hi); }
+  .tile-status.err { color: var(--danger); }
+  .remove { align-self: flex-start; margin-top: 6px; font: inherit; font-size: 13px; color: var(--cream); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+  .remove[hidden] { display: none; }
+
+  .check { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; font-size: 15px; cursor: pointer; }
+  .check input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--gold); }
+  .check + .check { margin-top: 16px; }
+
+  /* Submit */
+  .submit-row { margin-top: 40px; }
+  .btn-submit {
+    width: 100%;
+    font: inherit; font-weight: 900; font-stretch: 108%; font-size: 20px;
+    color: var(--ink);
+    background: linear-gradient(180deg, var(--gold-hi), var(--gold) 60%, #e08d12);
+    border: 0; border-radius: 16px;
+    padding: 18px 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 var(--gold-deep), 0 16px 30px rgba(0, 0, 0, .4);
+    transition: transform .1s, box-shadow .1s;
+  }
+  .btn-submit:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--gold-deep), 0 8px 18px rgba(0, 0, 0, .4); }
+  .btn-submit:disabled { opacity: .6; cursor: progress; transform: none; }
+  .deadline-note { text-align: center; color: var(--muted); font-size: 14px; margin: 14px 0 0; }
+
+  .status { margin-top: 18px; font-size: 15px; }
+  .status[hidden] { display: none; }
+  .bar { height: 8px; border-radius: 99px; background: rgba(255, 245, 232, .14); overflow: hidden; margin-top: 8px; }
+  .bar span { display: block; height: 100%; width: 0; background: var(--gold); transition: width .25s; }
+  .status.error { color: var(--danger); font-weight: 700; }
+
+  /* Success */
+  .done { text-align: center; padding: 60px 10px 20px; }
+  .done[hidden] { display: none; }
+  .done h2 {
+    font-size: clamp(36px, 7vw, 60px); font-stretch: 112%; line-height: .95;
+    background: linear-gradient(180deg, var(--gold-hi), var(--gold) 60%, #e08d12);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 3px 0 var(--gold-deep)) drop-shadow(0 14px 18px rgba(0, 0, 0, .5));
+    animation: rise .8s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  .ref { display: inline-block; margin: 22px 0 10px; padding: 12px 22px; border: 3px solid var(--cream); border-radius: 14px; background: var(--red); font-weight: 900; font-size: 24px; letter-spacing: .06em; }
+  .done p { color: var(--muted); max-width: 46ch; margin: 10px auto; }
+  .btn-ghost { margin-top: 18px; font: inherit; font-weight: 700; color: var(--cream); background: none; border: 2px solid var(--line); border-radius: 999px; padding: 10px 22px; cursor: pointer; }
+
+  footer { max-width: 760px; margin: 0 auto; padding: 0 22px 48px; color: var(--muted); font-size: 14px; }
+
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  [hidden] { display: none !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div>
+    <p class="church">Destiny Life Christian Centre<span>...raising destiny fulfillers</span></p>
+    <p class="conf-name">Destiny International Conference 2026<br>Transformation: Glory to Glory</p>
+    <h1>Get your business on the board</h1>
+    <p class="lede">Our photobooth moodboard will be in hundreds of conference photos. Book a space and show your business to everyone who stands in front of it.</p>
+  </div>
+  <aside class="date-card" aria-label="Conference dates">
+    <p class="dates">Fri 13 – Sun 15<br>Nov 2026</p>
+    <p>10, Soretire Str., Maternity B/Stop, off Yaya Abatan, Ogba, Lagos</p>
+    <p class="deadline">Submissions close<strong id="deadline-hero"></strong></p>
+  </aside>
+</header>
+
+<main>
+  <form id="form" novalidate>
+
+    <!-- 1 -->
+    <section class="step">
+      <div class="step-head">
+        <span class="step-n" aria-hidden="true">1</span>
+        <div>
+          <h2>About you</h2>
+          <p>So the media team can reach you if anything about your logo needs fixing.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="field"><label for="full_name">Full name</label><input type="text" id="full_name" name="full_name" autocomplete="name" required></div>
+        <div class="field"><label for="phone">Phone number (WhatsApp)</label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="080..." required></div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+        <div class="field"><label for="department">Church department or unit <span class="opt">optional</span></label><input type="text" id="department" name="department" placeholder="e.g. Choir, Ushering"></div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="step">
+      <div class="step-head">
+        <span class="step-n" aria-hidden="true">2</span>
+        <div>
+          <h2>Your business</h2>
+          <p>Write the business name exactly as you want it to appear on the board.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="field"><label for="business_name">Business name</label><input type="text" id="business_name" name="business_name" maxlength="120" required></div>
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Choose one</option>
+            <option>Fashion and tailoring</option>
+            <option>Food and catering</option>
+            <option>Beauty and hair</option>
+            <option>Events and décor</option>
+            <option>Photography and media</option>
+            <option>Tech and digital services</option>
+            <option>Real estate and construction</option>
+            <option>Health and wellness</option>
+            <option>Education and training</option>
+            <option>Logistics and transport</option>
+            <option>Finance and consulting</option>
+            <option>Retail and general goods</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="tagline">Tagline <span class="opt">optional</span><span class="counter" id="tagline-count">0 / 80</span></label>
+          <input type="text" id="tagline" name="tagline" maxlength="80" placeholder="One short line, e.g. Bespoke native wear for every occasion">
+        </div>
+        <div class="field full">
+          <label for="description">What does your business do? <span class="opt">optional</span><span class="counter" id="desc-count">0 / 300</span></label>
+          <textarea id="description" name="description" maxlength="300"></textarea>
+        </div>
+        <div class="field"><label for="instagram">Instagram <span class="opt">optional</span></label><input type="text" id="instagram" name="instagram" placeholder="@yourbusiness"></div>
+        <div class="field"><label for="tiktok">TikTok <span class="opt">optional</span></label><input type="text" id="tiktok" name="tiktok" placeholder="@yourbusiness"></div>
+        <div class="field"><label for="x_handle">X (Twitter) <span class="opt">optional</span></label><input type="text" id="x_handle" name="x_handle" placeholder="@yourbusiness"></div>
+        <div class="field"><label for="facebook">Facebook <span class="opt">optional</span></label><input type="text" id="facebook" name="facebook"></div>
+        <div class="field"><label for="website">Website <span class="opt">optional</span></label><input type="url" id="website" name="website" placeholder="https://"></div>
+        <div class="field"><label for="whatsapp_business">WhatsApp business number <span class="opt">optional</span></label><input type="tel" id="whatsapp_business" name="whatsapp_business"></div>
+        <div class="field full"><label for="location">Shop or office location <span class="opt">optional</span></label><input type="text" id="location" name="location"></div>
+        <div class="field full">
+          <label for="brand_colors">Brand colours <span class="opt">optional</span></label>
+          <input type="text" id="brand_colors" name="brand_colors" placeholder="e.g. #0A4D8C and gold">
+          <span class="help">Hex codes help us match your colours exactly. Leave blank if you're not sure.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="step">
+      <div class="step-head">
+        <span class="step-n" aria-hidden="true">3</span>
+        <div>
+          <h2>Choose your space</h2>
+          <p>Pick a space size, then pay into the account below.</p>
+        </div>
+      </div>
+      <fieldset style="border:0;padding:0;margin:0">
+        <legend class="sr">Board space package</legend>
+        <div class="packages" id="packages"></div>
+      </fieldset>
+      <div class="field" id="placement-field" hidden style="margin-top:18px">
+        <label for="placement_pref">Where would you like to be placed?</label>
+        <select id="placement_pref" name="placement_pref">
+          <option value="">No preference</option>
+          <option>Near the photobooth centre</option>
+          <option>Top row of the board</option>
+          <option>Beside the conference logo</option>
+        </select>
+        <span class="help">We'll do our best, but final placement depends on the board layout.</span>
+      </div>
+
+      <div class="pay-box">
+        <p>Pay into:</p>
+        <p id="pay-bank"></p>
+        <div class="acct"><span id="pay-number"></span><button type="button" class="btn-small" id="copy-acct">Copy</button></div>
+        <p style="margin-top:8px;font-size:14px;color:var(--muted)">Use your business name as the transfer narration.</p>
+      </div>
+
+      <div class="grid" style="margin-top:20px">
+        <div class="field"><label for="payment_ref">Transaction reference <span class="opt">optional</span></label><input type="text" id="payment_ref" name="payment_ref"></div>
+      </div>
+      <div class="tiles" style="margin-top:18px" id="proof-tile"></div>
+    </section>
+
+    <!-- 4 -->
+    <section class="step">
+      <div class="step-head">
+        <span class="step-n" aria-hidden="true">4</span>
+        <div>
+          <h2>Upload your logos</h2>
+          <p>Send every version you have. The more versions, the better your logo will look on the board.</p>
+        </div>
+      </div>
+      <div class="file-tips">
+        <strong>Best files to send</strong>
+        <ul>
+          <li>SVG, AI, EPS or PDF from your designer. These stay sharp at any size.</li>
+          <li>If you only have images, send PNG with a transparent background, at least 2000 pixels wide.</li>
+          <li>Avoid screenshots, WhatsApp-forwarded images, or logos sitting on a white box.</li>
+        </ul>
+      </div>
+      <div class="tiles" id="logo-tiles"></div>
+      <label class="check" style="margin-top:22px">
+        <input type="checkbox" id="low_quality_logo" name="low_quality_logo">
+        <span>I don't have a high-quality version of my logo. <span class="opt">The media team will contact you about options.</span></span>
+      </label>
+    </section>
+
+    <!-- 5 -->
+    <section class="step">
+      <div class="step-head">
+        <span class="step-n" aria-hidden="true">5</span>
+        <div>
+          <h2>Confirm and send</h2>
+        </div>
+      </div>
+      <label class="check">
+        <input type="checkbox" id="agreed_terms" name="agreed_terms" required>
+        <span>My business and logo are suitable for a church event, and I allow the media team to resize, recolour or adjust my logo so it fits the board design.</span>
+      </label>
+      <label class="check">
+        <input type="checkbox" id="agreed_review" required>
+        <span>I understand that my space is confirmed only after payment is verified and the media team approves my submission.</span>
+      </label>
+
+      <div class="submit-row">
+        <button type="submit" class="btn-submit" id="submit-btn">Book my space</button>
+        <p class="deadline-note">Submissions close <span id="deadline-foot"></span></p>
+        <div class="status" id="status" hidden role="status" aria-live="polite">
+          <span id="status-text"></span>
+          <div class="bar" id="status-bar"><span></span></div>
+        </div>
+      </div>
+    </section>
+  </form>
+
+  <section class="done" id="done" hidden aria-live="polite">
+    <h2>Your space is booked</h2>
+    <div class="ref" id="ref-code"></div>
+    <p>Save this reference. The media team will check your payment and logos, then confirm on WhatsApp. If a logo needs fixing, they'll message you.</p>
+    <button type="button" class="btn-ghost" onclick="location.reload()">Book another business</button>
+  </section>
+</main>
+
+<footer>
+  <p>Questions? Message the media team on WhatsApp: <a id="contact-link" href="#"></a><br>@destinylifecc</p>
+</footer>
+
+<script type="module">
+  /* =====================================================
+     EDIT THESE BEFORE GOING LIVE
+     ===================================================== */
+  const CONFIG = {
+    DEADLINE: 'Friday, 30 October 2026',
+    CONTACT_WHATSAPP: '+234 800 000 0000',
+    REQUIRE_PAYMENT_PROOF: true,
+    MAX_FILE_MB: 20,
+    PACKAGES: [
+      { id: 'standard', name: 'Standard', price: '₦00,000', detail: 'Your logo and business name on the board.' },
+      { id: 'feature',  name: 'Feature',  price: '₦00,000', detail: 'A larger logo with your tagline and social handle.' },
+      { id: 'premium',  name: 'Premium',  price: '₦00,000', detail: 'Our biggest space, close to the photobooth, with a QR code to your page.', placement: true },
+    ],
+    PAYMENT: {
+      bank: 'Bank name',
+      accountName: 'Account name',
+      accountNumber: '0000000000',
+    },
+  };
+  /* ===================================================== */
+
+  const LOGO_SLOTS = [
+    { key: 'logo_primary',    title: 'Main logo, full colour', hint: 'The logo you use most often.', required: true },
+    { key: 'logo_reversed',   title: 'White version', hint: 'For dark backgrounds. The board is deep red and black, so this one matters.', dark: true },
+    { key: 'logo_mono',       title: 'Black or one-colour version', hint: 'A single-colour version of your logo.' },
+    { key: 'logo_icon',       title: 'Icon only', hint: 'Just the symbol, without the business name.' },
+    { key: 'logo_horizontal', title: 'Wide layout', hint: 'Symbol beside the name.' },
+    { key: 'logo_stacked',    title: 'Stacked layout', hint: 'Symbol above the name.' },
+  ];
+  const PROOF_SLOT = { key: 'payment_proof', title: 'Proof of payment', hint: 'Screenshot or PDF of your transfer receipt.', required: CONFIG.REQUIRE_PAYMENT_PROOF, proof: true };
+
+  const LOGO_EXT = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'pdf', 'ai', 'eps'];
+  const PROOF_EXT = ['png', 'jpg', 'jpeg', 'webp', 'pdf'];
+  const MIME = { svg: 'image/svg+xml', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp', pdf: 'application/pdf', ai: 'application/postscript', eps: 'application/postscript' };
+
+  const $ = (id) => document.getElementById(id);
+  const files = {}; // key -> File
+
+  // ---------- Fill in config text ----------
+  $('deadline-hero').textContent = CONFIG.DEADLINE;
+  $('deadline-foot').textContent = CONFIG.DEADLINE;
+  $('pay-bank').textContent = `${CONFIG.PAYMENT.bank}, ${CONFIG.PAYMENT.accountName}`;
+  $('pay-number').textContent = CONFIG.PAYMENT.accountNumber;
+  $('contact-link').textContent = CONFIG.CONTACT_WHATSAPP;
+  $('contact-link').href = 'https://wa.me/' + CONFIG.CONTACT_WHATSAPP.replace(/\D/g, '');
+
+  $('copy-acct').addEventListener('click', async (e) => {
+    try { await navigator.clipboard.writeText(CONFIG.PAYMENT.accountNumber); e.target.textContent = 'Copied'; }
+    catch { e.target.textContent = 'Copy failed'; }
+    setTimeout(() => (e.target.textContent = 'Copy'), 1800);
+  });
+
+  // ---------- Packages ----------
+  const pkgWrap = $('packages');
+  CONFIG.PACKAGES.forEach((p, i) => {
+    const label = document.createElement('label');
+    label.className = 'pkg';
+    label.innerHTML = `
+      <input type="radio" name="package" value="${p.id}" ${i === 0 ? 'required' : ''}>
+      <div class="pkg-card">
+        <div class="pkg-name"></div>
+        <div class="pkg-price"></div>
+        <div class="pkg-detail"></div>
+      </div>`;
+    label.querySelector('.pkg-name').textContent = p.name;
+    label.querySelector('.pkg-price').textContent = p.price;
+    label.querySelector('.pkg-detail').textContent = p.detail;
+    pkgWrap.appendChild(label);
+  });
+  pkgWrap.addEventListener('change', () => {
+    const chosen = CONFIG.PACKAGES.find((p) => p.id === selectedPackage());
+    $('placement-field').hidden = !(chosen && chosen.placement);
+  });
+  const selectedPackage = () => (document.querySelector('input[name="package"]:checked') || {}).value || '';
+
+  // ---------- Character counters ----------
+  [['tagline', 'tagline-count', 80], ['description', 'desc-count', 300]].forEach(([id, out, max]) => {
+    $(id).addEventListener('input', () => ($(out).textContent = `${$(id).value.length} / ${max}`));
+  });
+
+  // ---------- Upload tiles ----------
+  function buildTile(slot, container) {
+    const allowed = slot.proof ? PROOF_EXT : LOGO_EXT;
+    const tile = document.createElement('div');
+    tile.className = 'tile' + (slot.required ? ' required-tile' : '');
+    tile.innerHTML = `
+      <div class="drop ${slot.dark ? 'dark' : ''}">
+        <span class="placeholder"><span class="plus" aria-hidden="true">+</span>Tap to upload<br>or drop a file here</span>
+        <input type="file" accept="${allowed.map((e) => '.' + e).join(',')}" aria-label="">
+      </div>
+      <div class="tile-body">
+        <span class="tile-title"></span>
+        <span class="tile-hint"></span>
+        <span class="tile-status"></span>
+        <button type="button" class="remove" hidden>Remove</button>
+      </div>`;
+    const drop = tile.querySelector('.drop');
+    const input = tile.querySelector('input');
+    const status = tile.querySelector('.tile-status');
+    const remove = tile.querySelector('.remove');
+    const placeholder = tile.querySelector('.placeholder');
+
+    tile.querySelector('.tile-title').textContent = slot.title + (slot.required ? '' : ' ');
+    tile.querySelector('.tile-hint').textContent = (slot.required ? 'Required. ' : 'Optional. ') + slot.hint;
+    input.setAttribute('aria-label', `Upload ${slot.title}`);
+
+    const setStatus = (msg, kind) => { status.textContent = msg; status.className = 'tile-status ' + (kind || ''); };
+    const clearPreview = () => { drop.querySelectorAll('img, .file-badge').forEach((n) => n.remove()); };
+
+    ['dragenter', 'dragover'].forEach((ev) => drop.addEventListener(ev, () => drop.classList.add('dragging')));
+    ['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, () => drop.classList.remove('dragging')));
+
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      if (!file) return;
+      const ext = (file.name.split('.').pop() || '').toLowerCase();
+      if (!allowed.includes(ext)) {
+        input.value = '';
+        setStatus(`${ext.toUpperCase() || 'This'} files aren't accepted here. Use ${allowed.join(', ').toUpperCase()}.`, 'err');
+        return;
+      }
+      if (file.size > CONFIG.MAX_FILE_MB * 1024 * 1024) {
+        input.value = '';
+        setStatus(`This file is ${(file.size / 1048576).toFixed(1)} MB. The limit is ${CONFIG.MAX_FILE_MB} MB.`, 'err');
+        return;
+      }
+      files[slot.key] = file;
+      clearPreview();
+      placeholder.hidden = true;
+      remove.hidden = false;
+      tile.classList.remove('invalid');
+
+      const sizeLabel = file.size > 1048576 ? (file.size / 1048576).toFixed(1) + ' MB' : Math.round(file.size / 1024) + ' KB';
+
+      if (['png', 'jpg', 'jpeg', 'webp', 'svg'].includes(ext)) {
+        const img = document.createElement('img');
+        img.alt = `Preview of ${slot.title}`;
+        img.src = URL.createObjectURL(file);
+        drop.insertBefore(img, input);
+        img.onload = () => {
+          if (slot.proof || ext === 'svg') { setStatus(`${file.name}, ${sizeLabel}`, 'ok'); return; }
+          if (img.naturalWidth < 1500) {
+            setStatus(`This image is only ${img.naturalWidth}px wide and may look blurry on the board. Send a bigger file if you have one.`, 'warn');
+          } else if (ext === 'jpg' || ext === 'jpeg') {
+            setStatus(`JPG has no transparent background. A PNG or SVG will look cleaner, if you have one.`, 'warn');
+          } else {
+            setStatus(`${file.name}, ${img.naturalWidth}px wide. Looks good.`, 'ok');
+          }
+        };
+      } else {
+        const badge = document.createElement('span');
+        badge.className = 'file-badge';
+        badge.textContent = ext.toUpperCase() + ' file';
+        drop.insertBefore(badge, input);
+        setStatus(`${file.name}, ${sizeLabel}`, 'ok');
+      }
+    });
+
+    remove.addEventListener('click', () => {
+      delete files[slot.key];
+      input.value = '';
+      clearPreview();
+      placeholder.hidden = false;
+      remove.hidden = true;
+      setStatus('', '');
+    });
+
+    tile.dataset.key = slot.key;
+    container.appendChild(tile);
+  }
+  LOGO_SLOTS.forEach((s) => buildTile(s, $('logo-tiles')));
+  buildTile(PROOF_SLOT, $('proof-tile'));
+
+  // ---------- Validation ----------
+  function validate() {
+    const problems = [];
+    document.querySelectorAll('.field').forEach((f) => f.classList.remove('invalid'));
+
+    ['full_name', 'phone', 'email', 'business_name', 'category'].forEach((id) => {
+      const el = $(id);
+      if (!el.value.trim() || !el.checkValidity()) {
+        el.closest('.field').classList.add('invalid');
+        problems.push(el);
+      }
+    });
+    const site = $('website');
+    if (site.value.trim() && !site.checkValidity()) { site.closest('.field').classList.add('invalid'); problems.push(site); }
+
+    if (!selectedPackage()) problems.push(pkgWrap.querySelector('input'));
+    if (!files.logo_primary) problems.push(document.querySelector('[data-key="logo_primary"] input'));
+    if (PROOF_SLOT.required && !files.payment_proof) problems.push(document.querySelector('[data-key="payment_proof"] input'));
+    if (!$('agreed_terms').checked) problems.push($('agreed_terms'));
+    if (!$('agreed_review').checked) problems.push($('agreed_review'));
+
+    return problems;
+  }
+
+  function describe(el) {
+    if (el.name === 'package') return 'Choose a space package.';
+    if (el.closest('[data-key="logo_primary"]')) return 'Upload your main logo.';
+    if (el.closest('[data-key="payment_proof"]')) return 'Upload your proof of payment.';
+    if (el.id === 'agreed_terms' || el.id === 'agreed_review') return 'Tick both boxes in step 5.';
+    if (el.id === 'email') return 'Enter a valid email address.';
+    if (el.id === 'website') return 'Enter the full website address, starting with https://';
+    const label = document.querySelector(`label[for="${el.id}"]`);
+    return `Fill in ${label ? label.childNodes[0].textContent.trim().toLowerCase() : 'all required fields'}.`;
+  }
+
+  // ---------- Submit ----------
+  const statusBox = $('status'), statusText = $('status-text'), bar = $('status-bar').firstElementChild;
+  const showStatus = (msg, pct, isError) => {
+    statusBox.hidden = false;
+    statusBox.classList.toggle('error', !!isError);
+    statusBox.setAttribute('role', isError ? 'alert' : 'status');
+    statusText.textContent = msg;
+    $('status-bar').hidden = pct == null;
+    if (pct != null) bar.style.width = pct + '%';
+  };
+
+  $('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const problems = validate();
+    if (problems.length) {
+      showStatus(describe(problems[0]), null, true);
+      problems[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      problems[0].focus({ preventScroll: true });
+      return;
+    }
+
+    const btn = $('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    const id = crypto.randomUUID();
+    const urls = {};
+    const queue = Object.entries(files);
+
+    try {
+      // Loaded only when needed, so the form still shows if the CDN is slow
+      const { upload } = await import('https://esm.sh/@vercel/blob@1/client');
+      for (let i = 0; i < queue.length; i++) {
+        const [key, file] = queue[i];
+        const ext = (file.name.split('.').pop() || 'bin').toLowerCase();
+        const base = (i / queue.length) * 100;
+        showStatus(`Uploading file ${i + 1} of ${queue.length}`, base);
+        const blob = await upload(`moodboard/${id}/${key}.${ext}`, file, {
+          access: 'public',
+          handleUploadUrl: '/api/upload',
+          contentType: file.type || MIME[ext] || 'application/octet-stream',
+          multipart: file.size > 5 * 1024 * 1024,
+          onUploadProgress: ({ percentage }) => showStatus(`Uploading file ${i + 1} of ${queue.length}`, base + (percentage / queue.length)),
+        });
+        urls[key + '_url'] = blob.url;
+      }
+
+      showStatus('Saving your details', 100);
+      const val = (id) => $(id).value.trim();
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id,
+          full_name: val('full_name'), phone: val('phone'), email: val('email'), department: val('department'),
+          business_name: val('business_name'), category: val('category'), tagline: val('tagline'), description: val('description'),
+          website: val('website'), instagram: val('instagram'), tiktok: val('tiktok'), x_handle: val('x_handle'), facebook: val('facebook'),
+          whatsapp_business: val('whatsapp_business'), location: val('location'), brand_colors: val('brand_colors'),
+          package: selectedPackage(), placement_pref: $('placement-field').hidden ? '' : val('placement_pref'),
+          payment_ref: val('payment_ref'),
+          low_quality_logo: $('low_quality_logo').checked,
+          agreed_terms: $('agreed_terms').checked && $('agreed_review').checked,
+          ...urls,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || 'Your details could not be saved.');
+
+      $('form').hidden = true;
+      $('ref-code').textContent = 'DIC-' + id.slice(0, 6).toUpperCase();
+      $('done').hidden = false;
+      window.scrollTo({ top: $('done').offsetTop - 40, behavior: 'smooth' });
+    } catch (err) {
+      console.error(err);
+      const msg = /network|fetch/i.test(err.message)
+        ? 'Your connection dropped while sending. Check your internet and tap Book my space again.'
+        : `${err.message} Tap Book my space to try again.`;
+      showStatus(msg, null, true);
+      btn.disabled = false;
+      btn.textContent = 'Book my space';
+    }
+  });
+</script>
+</body>
+</html>
